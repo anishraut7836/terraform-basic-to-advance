@@ -1,18 +1,36 @@
 variable "ami" {
   type        = string
-  default     = "ami-a0cfeed8"
+  default     = ""
   description = "AWS EC2 AMI"
-
 }
 
 variable "region" {
   type        = string
-  default     = "us-west-2"
+  default     = ""
   description = "AWS region"
 }
 
 variable "instance_type" {
   type        = string
-  default     = "t2.micro"
+  default     = ""
   description = "AWS EC2 Instance type"
+}
+
+variable "ingress_port" {
+  type = number
+  default = null
+  description = "AWS Security group inbound port"
+}
+
+
+variable "ingress_protocol" {
+  type = string
+  default = ""
+  description = "Protocol"
+}
+
+variable "cidr_blocks" {
+  type = list
+  default = null
+  description = "Inbound CIDR block"
 }

@@ -15,10 +15,10 @@ resource "aws_security_group" "first-sg" {
   name = "${random_pet.name.id}-sg"
 
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    from_port   = var.ingress_port
+    to_port     = var.ingress_port
+    protocol    = var.ingress_protocol
+    cidr_blocks = var.cidr_blocks
   }
 
   egress {
