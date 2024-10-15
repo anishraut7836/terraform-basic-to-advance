@@ -24,10 +24,17 @@ resource "aws_subnet" "sub1" {
   cidr_block = "10.0.0.0/24"
   availability_zone = "us-east-1a"
   map_public_ip_on_launch = true
+    tags = {
+      Name = "Web-Sub-public1"
+    }
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.myvpc.id
+
+    tags = {
+      Name = "Web-vpc-igw"
+    }
 }
 
 resource "aws_route_table" "RT" {
@@ -36,12 +43,17 @@ resource "aws_route_table" "RT" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
+
+    tags = {
+      Name = "Web-vpc-RT"
+    }
 }
 
 
 resource "aws_route_table_association" "rta1" {
   subnet_id = aws_subnet.sub1.id
   route_table_id = aws_route_table.RT.id
+
 }
 
 resource "aws_security_group" "websg" {
@@ -106,4 +118,12 @@ resource "aws_instance" "server" {
         "sudo python3 app.py >/dev/null 2>&1 &"
      ]
   }
+    tags = {
+      Name = "Web-ec2"
+    }
 }
+
+###Run the manually python command
+###Connect the EC2 machine using ssh
+###sudo python3 app.py >/dev/null 2>&1 &
+###After browse the URL using public ip 
