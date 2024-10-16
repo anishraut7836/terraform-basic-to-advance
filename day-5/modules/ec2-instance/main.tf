@@ -1,10 +1,11 @@
 provider "aws" {
-  region = var.aws_region
+  region = var.region
 }
 
-variable "aws_region" {
+variable "region" {
   description = "AWS region"
   type = string
+ 
 }
 
 variable "ami" {
@@ -12,7 +13,7 @@ variable "ami" {
   type = string
 }
 
-variable "ec2_type" {
+variable "instance_type" {
   description = "AWS ec2 instance type for example: t2.micro"
   type = string
 }
@@ -20,5 +21,5 @@ variable "ec2_type" {
 
 resource "aws_instance" "example" {
   ami = var.ami
-  instance_type = var.ec2_type
+  instance_type = var.instance_type
 }
