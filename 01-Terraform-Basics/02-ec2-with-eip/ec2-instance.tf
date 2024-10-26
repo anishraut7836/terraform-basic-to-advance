@@ -25,6 +25,6 @@ resource "aws_eip" "aws-static-publicip" {
 }
 
 resource "aws_eip_association" "eip_attach_to_ec2" {
-  instance_id = aws_instance.ec2demo.id
+  instance_id   = aws_instance.ec2demo.id
   allocation_id = aws_eip.aws-static-publicip.id
 }

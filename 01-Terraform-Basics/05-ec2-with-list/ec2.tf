@@ -34,7 +34,7 @@ variable "ec2_count" {
 
 variable "ec2-ami_id" {
   type = string
-  default = "ami-0533f2ba8a1995cf9"
+  default = "ami-04a37924ffe27da53"
 
   
 }

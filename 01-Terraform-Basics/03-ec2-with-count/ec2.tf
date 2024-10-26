@@ -52,5 +52,5 @@ variable "ec2_type" {
 }
 
 variable "aws_region" {
-  default = "ap-south-1"
+  default = "us-east-1"
 }

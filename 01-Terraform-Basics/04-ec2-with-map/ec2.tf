@@ -10,15 +10,15 @@ terraform {
 
 #Provider block
 provider "aws" {
-  region = var.aws_region.["dev"]
+  region = var.aws_region["dev"]
 }
 
 
 
 resource "aws_instance" "ec2demo-variable" {
-  ami           = var.ec2-ami_id.["dev"]
-  instance_type = var.ec2_type.["dev"]
-  count = var.ec2_count.["dev"]
+  ami           = var.ec2-ami_id["dev"]
+  instance_type = var.ec2_type["dev"]
+  count = var.ec2_count["dev"]
   tags = {
     Name = "my-ec2-${count.index}"
   }
@@ -39,8 +39,8 @@ variable "ec2_count" {
 variable "ec2-ami_id" {
   type = map(string)
   default = {
-    "dev" = "ami-0533f2ba8a1995cf9"
-    "stage" = "ami-06b21ccaeff8cd686"
+    "dev" = "ami-04a37924ffe27da53"
+    "stage" = "ami-0533f2ba8a1995cf9"
     "prod" = "ami-0acc77abdfc7ed5a6"
   }
   
