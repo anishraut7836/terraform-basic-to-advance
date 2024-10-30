@@ -1,0 +1,3 @@
+#Create VPC and Subnet based on the region and availability zones 
+#this is the fix region and availability zones
+# if changes the region then again i have make the changes in availability zones
