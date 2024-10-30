@@ -30,7 +30,7 @@ resource "aws_instance" "ec2demo" {
     host = self.public_ip
   }
   provisioner "local-exec" {
-    command = "echo ${aws_instance.ec2demo.private_ip}" > private_ip.txt
+    command = "echo ${aws_instance.ec2demo.private_ip} > private_ip.txt"
 
   }
 

@@ -28,9 +28,10 @@ resource "aws_instance" "ec2demo" {
     user = "ec2-user"
     private_key = file("./MyAWSKey.pem")
     host = self.public_ip
+    timeout = "1m"
   }
   provisioner "local-exec" {
-    command = "echo ${aws_instance.ec2demo.private_ip}" > private_ip.txt
+    command = "echo ${aws_instance.ec2demo.private_ip} > private_ip.txt"
 
   }
 
@@ -39,6 +40,7 @@ resource "aws_instance" "ec2demo" {
 ## in this case all upcoming resouce will fail 
 ## suppose next we have to create s3 bucket or any ec2 then in this case this will not go for next steps
   provisioner "remote-exec" {
+    
     inline = [  
       "sudo amazon-linux-extras install nginx1 -y",
       "sudo systemctl start nginx"
