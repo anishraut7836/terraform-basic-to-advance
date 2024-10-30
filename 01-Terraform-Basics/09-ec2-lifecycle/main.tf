@@ -15,11 +15,12 @@ provider "aws" {
 
 #Resource Block
 
-resource "aws_instance" "ec2demo" {
-  ami           = "ami-0533f2ba8a1995cf9" # Amazon Linux in us-east-1, update as per your region
+resource "aws_instance" "ec2demo-1" {
+  ami           = "ami-06b21ccaeff8cd686" # Amazon Linux in us-east-1, update as per your region
+  #ami = data.aws_ami.amazonami.id
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
-  #availability_zone = "us-east-2a"
+  #availability_zone = "us-east-1a"
 
   tags = {
     Name = "My-new-ec2"
@@ -31,10 +32,11 @@ resource "aws_instance" "ec2demo" {
 
 }
 
+/*
 ####Apply the lifecyclt to prevent deletion of resource while running terraform destroy command
 
 #Resource Block
-resource "aws_instance" "ec2demo" {
+resource "aws_instance" "ec2demo-2" {
   ami           = "ami-0533f2ba8a1995cf9" # Amazon Linux in us-east-1, update as per your region
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
@@ -49,13 +51,13 @@ resource "aws_instance" "ec2demo" {
   }
 
 }
+*/
 
-
-
+/*
 #ignore the changes if someone made the changes through UI. 
 
 #Resource Block
-resource "aws_instance" "ec2demo" {
+resource "aws_instance" "ec2demo-3" {
   ami           = "ami-0533f2ba8a1995cf9" # Amazon Linux in us-east-1, update as per your region
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
@@ -69,3 +71,5 @@ resource "aws_instance" "ec2demo" {
   }
 
 }
+
+*/

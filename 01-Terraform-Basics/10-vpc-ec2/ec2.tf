@@ -16,10 +16,10 @@ resource "aws_eip" "myeip" {
 
 
 variable "ami-id" {
-  
+  default = "ami-0533f2ba8a1995cf9"
 }
 
 
 variable "instance-type" {
-  
+  default = "t2.micro"
 }
