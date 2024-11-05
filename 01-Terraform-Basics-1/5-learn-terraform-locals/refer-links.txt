@@ -1,0 +1,4 @@
+https://developer.hashicorp.com/terraform/tutorials/configuration-language/locals
+
+https://github.com/hashicorp/learn-terraform-locals
+

@@ -1,0 +1,3 @@
+https://github.com/hashicorp/learn-terraform-variables/blob/main/main.tf
+
+https://developer.hashicorp.com/terraform/tutorials/configuration-language/variables

@@ -1,0 +1,4 @@
+https://github.com/hashicorp/learn-terraform-resources/tree/main
+
+https://developer.hashicorp.com/terraform/tutorials/configuration-language/resource
+

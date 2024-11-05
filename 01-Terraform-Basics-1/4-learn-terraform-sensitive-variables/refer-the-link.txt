@@ -1,0 +1,4 @@
+https://github.com/hashicorp/learn-terraform-sensitive-variables
+
+https://developer.hashicorp.com/terraform/tutorials/configuration-language/sensitive-variables
+
